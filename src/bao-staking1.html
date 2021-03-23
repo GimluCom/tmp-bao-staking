@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://www.bao.finance/static/media/bao-banner.90e5acb6.png"/>
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <title>Bao Staking | bao.finance</title>
+    <script src="static/bao-staking1.js"></script>
+    <link rel="stylesheet" href="static/bao-staking1.css">
+    <link rel="stylesheet" href="static/main-theme1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="">
+<div class="align-items-center" id="mainContainer">
+    <div class="text-center pt-5 py-4" id="headerDiv">
+        <h2>tBAO &mdash; Bao staking</h2>
+        <p class="m-0"><small><a href="https://www.bao.finance">www.bao.finance</a></small></p>
+    </div>
+    <hr>
+    <div class="text-center mr-auto py-4" id="infoDiv">
+        <div class="d-flex flex-column" id="infoDivInner">
+            <p>Here you may stake and unstake your Bao tokens.</p>
+            <p>Bao tokens can be acquired at an exchange such as <a href="https://www.baoswap.com/">baoswap.com</a></p>
+            <p>To use this staking tool, please ensure you have installed the Metamask extension or another another compatible wallet.</p>
+        </div>
+    </div>
+    <div class="text-center" id="btnDiv">
+        <div class="d-inline-flex justify-content-center flex-wrap-reverse" id="stakingDivMid">
+            <div class="border rounded p-4 d-inline-flex flex-column mx-4 mb-5" id="walletBalanceDiv" style="min-width: 250px;">
+                <div class="row"><div class="col"><h4>Wallet Balances:</h4></div></div>
+                <div class="row mt-4"><div class="col">Unstaked:</div></div>
+                <div class="row mx-auto" style="width: fit-content;"><div class="col pr-0 mr-1" id="tokenBalance1">0</div><div class="col">Bao</div></div>
+                <div class="row mt-4"><div class="col">Staked:</div></div>
+                <div class="row mx-auto" style="width: fit-content;"><div class="col pr-0 mr-1" id="tokenBalance2">0</div><div class="col">tBao</div></div>
+            </div>
+            <div class="border rounded p-4 d-inline-flex flex-column p-1 mx-4 mb-5" id="stakingDiv" style="min-width: 300px;">
+                <label class="row">
+                    <input type="text" inputmode="decimal" class="inputField col form-control" id="stakeAmount" placeholder="Stake amount (Bao)" onchange="checkAllowanceTimeout()" step="any" style="" autocomplete="off" spellcheck="false">
+                    <button class="col col-auto btn btn-success p-1 mb-0" id="btn13" onclick="getMaxAmount(0)">Max</button>
+                </label>
+                <button class="btn btn-warning mt-n1 disabled" id="btnToken0" onclick="stakeUnstakeToken(0)" disabled>Approve</button>
+                <label class="mt-5 row">
+                    <input type="text" inputmode="decimal" class="inputField col form-control" id="unstakeAmount" placeholder="Unstake amount (tBao)" step="any" style="" autocomplete="off" spellcheck="false">
+                    <button class="col col-auto btn btn-success p-1 mb-0" id="btn23" onclick="getMaxAmount(1)">Max</button>
+                </label>
+                <button class="btn btn-info mt-n1 disabled" id="btnToken1" onclick="stakeUnstakeToken(1)" disabled>Unstake</button>
+            </div>
+            <div class="border rounded p-4 d-inline-flex flex-column p-1 mx-2 mb-5" id="oneDiv">
+                <h4>Staking instructions:</h4>
+                <p class="mt-2 text-left">
+                    1. Click "Connect to Metamask"<br>
+                    2. Enter amount to stake<br>
+                    3. Click "Approve" (only on first use)<br>
+                    4. Click "Stake"
+                </p>
+            </div>
+            <div class="border rounded p-4 d-inline-flex flex-column p-1 mx-4 mb-5" id="btnDivInner" style="min-width: 270px">
+                <button class="btn btn-primary" id="btn1" onclick="connectMM();">Connect to MetaMask</button>
+                <p id="MMStatusPar" class="my-3">Please connect to Metamask</p>
+                <button class="btn btn-warning d-none" id="btnChangeNetwork" onclick="addNetwork()">Change Network</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
