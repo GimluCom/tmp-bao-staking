@@ -1,0 +1,21 @@
+#stakingDivMid > div {
+    border-color: var(--dark);
+}
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+
+
+
+/*
+#btn2, #btn3, #btn4 {
+    visibility: hidden;
+}
+#btnDivInner > button {
+    margin-top: 15px;
+}
+*/
